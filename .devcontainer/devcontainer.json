@@ -23,7 +23,7 @@
 		"all_proxy": "${localEnv:all_proxy}",
 		"ftp_proxy": "${localEnv:ftp_proxy}"
 },
-"postStartCommand": "echo hello",
+"postStartCommand": "bash ${CODESPACE_VSCODE_FOLDER}/.devcontainer/post_start.sh",
 "runArgs": [
 		"--network",
 		"host"
