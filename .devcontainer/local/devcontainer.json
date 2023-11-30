@@ -1,0 +1,28 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+	"name": "Ubuntu",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "ghcr.io/eviljoker/product_imagemagic_devcontainer:latest",
+	"containerEnv": {
+		"https_proxy": "${localEnv:https_proxy}",
+		"http_proxy": "${localEnv:http_proxy}",
+		"no_proxy": "${localEnv:no_proxy}",
+		"all_proxy": "${localEnv:all_proxy}",
+		"ftp_proxy": "${localEnv:ftp_proxy}"
+	},
+	"postStartCommand": "bash ${CODESPACE_VSCODE_FOLDER}/.devcontainer/post_start.sh",
+	"runArgs": [
+		"--network",
+		"host"
+	],
+	"remoteUser": "root",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"Codeium.codeium",
+				"esbenp.prettier-vscode"
+			]
+		}
+	}
+}
