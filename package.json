@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    
+    "copy-out": "mkdir -p extension/next && mv out/_next out/next && sed -i 's/\\/_next/\\.\\/next/g' out/**.html && mv out/index.html ./extension && rsync -va --delete-after out/next/ ./extension/next/ && rm -rf out",
+    "copy-public": "mkdir -p extension/images && cp public/images/* extension/images",
+    "export": "next build && npm run copy-out && npm run copy-public"
   },
   "dependencies": {
     "create-next-app": "^14.0.3",

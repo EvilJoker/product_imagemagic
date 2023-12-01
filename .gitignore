@@ -37,3 +37,6 @@ next-env.d.ts
 
 .devcontainer/output.log
 node_modules
+
+extension/*
+!extension/manifest.json

@@ -11,7 +11,7 @@
 		"all_proxy": "${localEnv:all_proxy}",
 		"ftp_proxy": "${localEnv:ftp_proxy}"
 	},
-	"postStartCommand": "bash ${CODESPACE_VSCODE_FOLDER}/.devcontainer/post_start.sh",
+	"postStartCommand": "bash ${PWD}/.devcontainer/post_start.sh",
 	"runArgs": [
 		"--network",
 		"host"
